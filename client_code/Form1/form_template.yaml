@@ -3,12 +3,64 @@ container:
   type: HtmlTemplate
   properties: {html: '@theme:standard-page.html'}
 components:
-- type: ColumnPanel
-  properties: {col_widths: '{}'}
-  name: content_panel
-  layout_properties: {slot: default}
-  components: []
+- name: label_6
+  properties: {text: Gym Membership, icon: 'fa:check-circle', role: input-prompt, foreground: 'theme:Error', border: '', bold: true, font_size: 25}
+  type: Label
+  layout_properties: {slot: title}
 - type: FlowPanel
   properties: {}
   name: navbar_links
+  layout_properties: {slot: default}
+  components:
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: content_panel
+    layout_properties: {width: 1106.5879877929688}
+    components:
+    - name: label_5
+      properties: {bold: true, align: center, spacing_above: large, icon: 'fa:angellist', underline: false, icon_align: right, foreground: 'theme:Error', italic: true, font_size: 25, text: ' Free Gym Membership'}
+      type: Label
+      layout_properties: {grid_position: 'WQXDGY,HCHWZF'}
+    - name: label_2
+      properties: {text: ' Enter Your Name', italic: true, underline: true, font_size: 20, bold: true}
+      type: Label
+      layout_properties: {grid_position: 'NSLMLV,OWTYTK'}
+    - name: text_box_1
+      properties: {placeholder: ' Your Name'}
+      type: TextBox
+      layout_properties: {grid_position: 'CGJPPA,DQSUAP'}
+    - name: label_1
+      properties: {text: Enter your Age, underline: true, italic: true, bold: true, font_size: 20}
+      type: Label
+      layout_properties: {grid_position: 'RBXQIX,SKQNCV'}
+    - name: text_box_3
+      properties: {placeholder: Age, type: number}
+      type: TextBox
+      layout_properties: {grid_position: 'HWQETP,LZQFDR'}
+    - name: label_3
+      properties: {text: Enter Your Email Address, underline: true, bold: true, font_size: 20}
+      type: Label
+      layout_properties: {grid_position: 'WIVXUX,QQFMMR'}
+    - name: text_box_2
+      properties: {placeholder: Email Address, type: text}
+      type: TextBox
+      layout_properties: {grid_position: 'LFILCA,DYLTXC'}
+    - name: label_4
+      properties: {text: 'Are You Interested In Free Membership?', underline: true, italic: true, bold: true, font_size: 17}
+      type: Label
+      layout_properties: {grid_position: 'UGXQQE,YYOZIV'}
+    - name: check_box_1
+      properties: {text: 'yes', allow_indeterminate: true, align: left, checked: false, bold: true, italic: true}
+      type: CheckBox
+      layout_properties: {grid_position: 'CGLHLW,HNDUYS', row_background: ''}
+    - name: button_1
+      properties: {text: SUBMIT, foreground: 'theme:Primary', border: '12', background: 'theme:Error'}
+      type: Button
+      layout_properties: {grid_position: 'XFHEMG,JGPVRS'}
+      data_bindings:
+      - {property: icon, code: 'self.item['''']', writeback: false}
+      event_bindings: {click: button_1_click}
+- name: label_7
+  properties: {text: About Us, foreground: 'theme:Error', role: headline, icon: 'fa:address-book', bold: true, font: '11'}
+  type: Label
   layout_properties: {slot: nav-right}
